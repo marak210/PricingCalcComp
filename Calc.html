@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    input {
+      font-family: "Poppins", sans-serif;
+      font-color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 10px;
+
+      width: 100px;
+      height: 37px;
+      border: 1px solid #333333;
+    }
+
+    label {
+      font-family: "Poppins", sans-serif;
+      font-color: rgba(253, 243, 243, 1);
+      font-size: 15px;
+      font-weight: 600;
+
+    }
+
+    p {
+      font-family: "Poppins", sans-serif;
+      font-color: rgba(253, 243, 243, 1);
+      font-size: 13px;
+      font-weight: 600;
+
+    }
+
+    button {
+      font-family: "Poppins", sans-serif;
+      color: rgba(253, 243, 243, 1);
+      font-style: normal;
+      font-size: 15px;
+      line-height: 24px;
+      text-align: center;
+      background-color: #F72585;
+
+      width: 120px;
+      height: 43px;
+
+      border: none;
+      border-radius: 21.5px;
+    }
+
+    table {
+      border-collapse: collapse;
+      background: #FFFFFF;
+      /* box-shadow: 10px 10px 20px 10px rgba(67, 97, 238, 0.1); */
+      border-radius: 5px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    table th#F1 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 21px;
+      letter-spacing: 0em;
+    }
+
+    table td {
+      color: #333333;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+
+      /* Cell Text */
+      position: static;
+      width: 130px;
+      height: 65px;
+      left: 520px;
+      top: 0px;
+      border-bottom: 1px solid #F4F4F4;
+      vertical-align: middle;
+      padding: 5px;
+
+    }
+
+    table th {
+      color: #333333;
+      font-size: 16px;
+      font-weight: 600;
+      height: 60px;
+      line-height: 21px;
+      letter-spacing: 0em;
+    }
+
+    table tr#ROW1 {
+      height: 85px;
+      vertical-align: middle;
+      background-color: #FDF3F3
+    }
+
+    table td#F2 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      <!-- background-color: rgba(247, 37, 133, 0.2);
+      -->
+    }
+
+    table td#F3 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.25);
+      -->
+    }
+
+    table td#F4 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.30);
+      -->
+    }
+
+    table td#F5 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.35);
+      -->
+    }
+
+    table td#F6 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.4);
+      -->
+    }
+
+    table td#F7 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.45);
+      -->
+    }
+
+    table td#F8 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: center;
+      < !-- background-color: rgba(247, 37, 133, 0.5);
+      -->
+    }
+
+    table td#COSTCOL {
+      color: rgba(11, 189, 60, 1);
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+   span {
+    position: relative;
+     top: -50%;
+     left: 80%;
+    }
+
+    .cheap
+    {
+      height: 35px;
+    }
+
+    div {
+      height: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+<center>
+  <label for="trnum-input">Number of transactions per month: </label>
+  <input id="trnum-input" name="trnum-input" type="number" inputmode="number" value="20" autocomplete="off">
+    <label for="aov-input">Average transaction value (£):</label>
+  <input id="aov-input" name="aov-input" type="number" inputmode="number" value="200" autocomplete="off">
+  <button type="button" value="Calculate" onclick="calculate(6)">Calculate</button>
+
+  <p id="text1">Based on making 500 transactions with an average sale of £15 per month.</p><br>
+  </center>
+  <table id="table1">
+    <tr>
+      <th>Provider</th>
+      <th>Terminal Price</th>
+      <th>Monthly Price</th>
+      <th>Variable Price</th>
+      <th>Fixed Price</th>
+      <th>Payout Speed</th>
+      <th id="F1">Monthly Cost</th>
+    </tr>
+    <tr id="ROW1">
+      <td><img src="https://static.wixstatic.com/media/4c523e_f962815f69e14c019975c19747c267ff~mv2.png/v1/fill/w_560,h_141,al_c,lg_1,enc_auto/Boost%20Logo.png"
+          width="100" >
+      </td>
+      <td>No Terminal Required</td>
+      <td>-</td>
+      <td>0.5%</td>
+      <td>-</td>
+      <td>Instant</td>
+      <td id="COSTCOL">£37.50
+      <!-- <div>
+        <span>
+<img src="https://static.wixstatic.com/media/4c523e_71986fdbe47c442b9cad4c09a80d1dca~mv2.png" class="cheap">
+        </span></div> -->
+      </td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_79eded1ffd05421ab718f394afffafe9~mv2.png/v1/fill/w_560,h_147,al_c,lg_1,enc_auto/Barclaycard.png"
+          width=100>
+      </td>
+      <td>£34.80 each</td>
+      <td>-</td>
+      <td>1.6%</td>
+      <td>-</td>
+      <td></td>
+      <td id="F2">£120.00*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_48ffe1a0593e4ed5bb9a70e8c39ee8ce~mv2.png/v1/fill/w_560,h_169,al_c,lg_1,enc_auto/sumup.png"
+          width="100">
+      </td>
+      <td>£29 - £149 each</td>
+      <td>-</td>
+      <td>1.69%</td>
+      <td>-</td>
+      <td>1-3 Days</td>
+      <td id="F3">£126.75*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_6d62605f7f644508803f3ff904e99de5~mv2.png/v1/fill/w_559,h_141,al_c,lg_1,enc_auto/Square.png"
+          width="100">
+      </td>
+      <td>£19.20 each</td>
+      <td>-</td>
+      <td>1.75%</td>
+      <td>-</td>
+      <td>0-2 Business Days</td>
+      <td id="F4">£131.25*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_683e7de8587b444882b46b52f7981455~mv2.png/v1/fill/w_560,h_171,al_c,lg_1,enc_auto/izettle.png"
+          width="100">
+      </td>
+      <td>£29 - £149 each</td>
+      <td>-</td>
+      <td>1.75%</td>
+      <td>-</td>
+      <td></td>
+      <td id="F5">£131.25*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_8ab563024c5d431a9150152b6f5d243b~mv2.png/v1/fill/w_556,h_232,al_c,lg_1,enc_auto/stripe.png"
+          width="100">
+      </td>
+      <td>£49 - £179 each</td>
+      <td>-</td>
+      <td>1.4%**</td>
+      <td>10p</td>
+      <td>3 Business Days</td>
+      <td id="F6">£155.00*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_a0b948d3cb864c9487b17d5840292feb~mv2.png/v1/fill/w_560,h_248,al_c,lg_1,enc_auto/dojo.png"
+          width="100">
+      </td>
+      <td></td>
+      <td>£24 per month</td>
+      <td>1.6%**</td>
+      <td>39p</td>
+      <td>1 Day</td>
+      <td id="F7">£336.50*</td>
+    </tr>
+    <tr>
+      <td><img
+          src="https://static.wixstatic.com/media/4c523e_09fc55c575a34ec3bd6ddc56078dc986~mv2.png/v1/fill/w_560,h_106,al_c,lg_1,enc_auto/worldpay.png"
+          width="100">
+      </td>
+      <td></td>
+      <td>£17.95 per month</td>
+      <td>2.75%</td>
+      <td>25p</td>
+      <td>3-4 Days</td>
+      <td id="F8">£349.20*</td>
+    </tr>
+  </table>
+</body>
+
+
+<script>
+
+  var trnum = 500;
+  var aov = 15;
+  var volume;
+
+  var V_Boost = 0.0050;
+  const V_Barclaycard = 0.0160;
+  const V_SumUp = 0.0169;
+  const V_Square = 0.0175;
+  const V_iZettle = 0.0175;
+  const V_Stripe = 0.0140;
+  const V_Dojo = 0.0160;
+  const V_WorldPay = 0.0275;
+
+  const F_Stripe = 0.1;
+  const F_Dojo = 0.39;
+  const F_WorldPay = 0.25;
+
+  function calculate(n) {
+    trnum = document.getElementById("trnum-input").value;
+    aov = document.getElementById("aov-input").value;
+    document.getElementById("text1").innerHTML = "Based on making " + trnum + " transactions with an average sale of £" + aov + " per month.";
+
+    document.getElementById("COSTCOL").innerHTML = "£" + Number(trnum * aov * V_Boost).toFixed(2);
+    document.getElementById("F2").innerHTML = "£" + Number(trnum * aov * V_Barclaycard).toFixed(2) + "*";
+    document.getElementById("F3").innerHTML = "£" + Number(trnum * aov * V_SumUp).toFixed(2) + "*";
+    document.getElementById("F4").innerHTML = "£" + Number(trnum * aov * V_Square).toFixed(2) + "*";
+    document.getElementById("F5").innerHTML = "£" + Number(trnum * aov * V_iZettle).toFixed(2) + "*";
+    document.getElementById("F6").innerHTML = "£" + Number((trnum * aov * V_Stripe) + (trnum * F_Stripe)).toFixed(2) + "*";
+    document.getElementById("F7").innerHTML = "£" + Number((trnum * aov * V_Dojo) + (trnum * F_Dojo)).toFixed(2) + "*";
+    document.getElementById("F8").innerHTML = "£" + Number((trnum * aov * V_WorldPay) + (trnum * F_WorldPay)).toFixed(2) + "*";
+
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("table1");
+  switching = true;
+
+  dir = "asc";
+
+  while (switching) {
+
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+
+    for (i = 1; i < (rows.length - 1); i++) {
+
+      shouldSwitch = false;
+
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+
+
+      if (n == 0) {
+        xText = x.innerHTML.toLowerCase();
+        yText = y.innerHTML.toLowerCase();
+      } else {
+        xText = parseFloat(x.innerHTML.split('£')[1].replace(/,/g, ''));
+        yText = parseFloat(y.innerHTML.split('£')[1].replace(/,/g, ''));
+      }
+
+      if (dir == "asc") {
+        if (xText > yText) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (xText < yText) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+
+      switchcount++;
+    } else {
+
+      if (switchcount == 0 && dir == "desc") {
+        dir = "asc";
+        switching = true;
+      }
+    }
+  }
+   /* document.getElementById("F2").style["background-color"] = "rgba(247, 37, 133, 0.2)";
+    document.getElementById("F3").style["background-color"] = "rgba(247, 37, 133, 0.25)";
+    document.getElementById("F4").style["background-color"] = "rgba(247, 37, 133, 0.3)";
+    document.getElementById("F5").style["background-color"] = "rgba(247, 37, 133, 0.35)";
+    document.getElementById("F6").style["background-color"] = "rgba(247, 37, 133, 0.4";
+    document.getElementById("F7").style["background-color"] = "rgba(247, 37, 133, 0.45)";
+    document.getElementById("F8").style["background-color"] = "rgba(247, 37, 133, 0.5)"; 
+
+        const element = document.getElementById("table1");
+  element.scrollIntoView();
+
+*/
+  }
+  
+
+</script>
+
+</html>
