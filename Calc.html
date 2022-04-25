@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8Z533R');</script>
+<!-- End Google Tag Manager -->
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <style>
 
     html {
@@ -184,17 +192,46 @@
       letter-spacing: 0em;
       text-align: center;
     }
-   span {
+   span.cheap {
     position: relative;
      top: -50%;
      left: 80%;
+		 height: 35px;
     }
+		.tooltip {
+  position:relative; /* making the .tooltip span a container for the tooltip text */
+  border-bottom:1px dashed #000; /* little indicater to indicate it's hoverable */
+}
+		.tooltip:before {
+  content: attr(data-text); /* here's the magic */
+  position:absolute;
+  
+  /* vertically center */
+  top:50%;
+  transform:translateY(-50%);
+  
+  /* move to right */
+  left:100%;
+  margin-left:15px; /* and add a small left margin */
+  
+  /* basic styles */
 
-    .cheap
-    {
-      height: 35px;
-    }
+			  font-family: "Poppins", sans-serif;
+      color: rgba(253, 243, 243, 1);
+      font-style: normal;
+      font-size: 15px;
+      text-align: center;
+      background: #F72585;
+			        color: rgba(253, 243, 243, 1);
+  width:200px;
+  padding:10px;
+  border-radius:10px;
 
+  display:none; /* hide by default */
+}
+		.tooltip:hover:before {
+  display:block;
+}
     div {
       height: 0;
     }
@@ -203,11 +240,20 @@
 </head>
 
 <body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8Z533R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
 <center>
-  <label for="trnum-input">Number of transactions per month: </label>
-  <input id="trnum-input" name="trnum-input" type="number" inputmode="number" value="20" autocomplete="off">
-    <label for="aov-input">Average transaction value (£):</label>
-  <input id="aov-input" name="aov-input" type="number" inputmode="number" value="200" autocomplete="off">
+	
+	<label for="trnum-input">Number of transactions per month: </label>
+  <input id="trnum-input" name="trnum-input" type="number" inputmode="number" value="200" autocomplete="off">
+    <label for="aov-input"><span 
+  data-text="Enter your average order value e.g. £100 per order." 
+  class="tooltip"
+>Average transaction value (£):</span> </label>
+  <input id="aov-input" name="aov-input" type="number" inputmode="number" value="15" autocomplete="off">
   <button type="button" value="Calculate" onclick="calculate(6)">Calculate</button>
 
   <p id="text1">Based on making 500 transactions with an average sale of £15 per month.</p><br>
@@ -226,7 +272,7 @@
       <td><img src="https://static.wixstatic.com/media/4c523e_f962815f69e14c019975c19747c267ff~mv2.png/v1/fill/w_560,h_141,al_c,lg_1,enc_auto/Boost%20Logo.png"
           width="100" >
       </td>
-      <td>No Terminal Required</td>
+      <td>0 - No Terminal Required</td>
       <td>-</td>
       <td>0.5%</td>
       <td>-</td>
