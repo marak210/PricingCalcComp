@@ -228,14 +228,14 @@
 
 <body>
 	<label for="trnum-input">Number of transactions per month: </label><br>
-	<input id="trnum-input" name="trnum-input" type="number" inputmode="number" value="200" autocomplete="off"><br>
+	<input id="trnum-input" name="trnum-input" type="number" inputmode="number" value="500" autocomplete="off"><br>
 	<label for="aov-input"><span data-text="Enter your average order value e.g. £100 per order." class="tooltip">Average
 				transaction value (£):</span> </label><br>
 		<input id="aov-input" name="aov-input" type="number" inputmode="number" value="15" autocomplete="off"><br>
 		<button type="button" value="Calculate" onclick="calculate(1)">Calculate</button>
 
 
-	<p id="text1">Based on making 500 transactions with an average sale of £15 per month.</p><br>
+	<p id="text1">Based on making 500 transactions per month with an average sale of £15 per transaction.</p>
 
 	<table id="table1">
 		<tr>
@@ -329,7 +329,7 @@
 	function calculate(n) {
 		trnum = document.getElementById("trnum-input").value;
 		aov = document.getElementById("aov-input").value;
-		document.getElementById("text1").innerHTML = "Based on making " + trnum + " transactions with an average sale of £" + aov + " per month.";
+		document.getElementById("text1").innerHTML = "Based on making " + trnum + " transactions per month with an average sale of £" + aov + " per transaction.";
 
 		document.getElementById("COSTCOL").innerHTML = "£" + Number(trnum * aov * V_Boost).toFixed(2);
 		document.getElementById("F2").innerHTML = "£" + Number(trnum * aov * V_Barclaycard).toFixed(2) + "*";
